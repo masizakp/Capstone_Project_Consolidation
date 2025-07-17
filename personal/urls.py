@@ -1,10 +1,10 @@
 """
-URL configuration for the Django project.
+    URL configuration for the Django project.
 
-This module maps URL paths to corresponding view functions.
-Currently, it routes:
-- the root URL ('') to the home_screen_view in the personal app
-- the 'admin/' URL to the Django admin site
+    This module maps URL paths to corresponding view functions.
+    Currently, it routes:
+    - the root URL ('') to the home_screen_view in the personal app
+    - the 'admin/' URL to the Django admin site
 """
 
 from django.contrib import admin
@@ -25,4 +25,4 @@ urlpatterns = [
     path("extrapage/", views.meetsetshehla_view, name="extrapage"),
     path("order/", views.order_view, name="order"),
     path("success/", views.success_view, name="success"),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
