@@ -1,3 +1,13 @@
+"""
+    URL configuration for the user_auth app.
+
+    Defines URL routes for user authentication, including:
+    - Login page
+    - User authentication POST handler
+    - User dashboard
+    - User registration
+"""
+
 from django.urls import path
 from user_auth import views
 
