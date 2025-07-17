@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+venv/
+.env/
+env/
+.venv/
+
+# Django database file
+db.sqlite3
+*.sqlite3
+
+# Django migrations
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/__pycache__/
+**/migrations/*.py
+
+# Ignore media files (user uploaded)
+media/
+
+# Static files (if you collect static files into this folder)
+staticfiles/
+
+# Logs
+*.log
+
+# Pytest cache
+.pytest_cache/
+
+# IDE/editor config files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS files
+.DS_Store
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Node modules (if any frontend tooling)
+node_modules/
+
+# Pip logs
+pip-log.txt
+pip-delete-this-directory.txt

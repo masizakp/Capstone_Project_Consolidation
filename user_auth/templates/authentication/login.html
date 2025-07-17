@@ -1,0 +1,23 @@
+<h1>Login as User</h1>
+
+<form action="{% url 'user_auth:authenticate_user' %}" method="post">
+    {% csrf_token %}
+
+    <!-- Username input -->
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="User" required>
+    <br/><br/>
+
+    <!-- Password input -->
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <br/><br/>
+
+    <!-- Submit button -->
+    <input type="submit" value="Login" />
+
+    <!-- Error message display if login fails -->
+    {% if error %}
+        <div class="alert alert-danger mt-2">{{ error }}</div>
+    {% endif %}
+</form>

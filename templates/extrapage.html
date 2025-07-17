@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galleries</title>
+   <style>
+    .product-img {
+          width: 600px; /* Adjust this value for medium size */
+          height: 200;
+          display: block;
+          margin: 0 auto;
+          border-radius: 10%;
+      }
+        img {
+            border-radius: 10%;
+            size: 40px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #be7e0f;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #b0a41a;
+            color: black;
+            margin-top: 40px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        img.profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+        section {
+            background-color: #b0a41a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(245, 55, 55, 0.1);
+        }
+        h2 {
+            border-bottom: 2px solid #e53c29;
+            padding-bottom: 8px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }     
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #b0a41a;
+            color: black;
+            margin-top: 40px;
+        }
+        /* Optional: Style for links */
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            text-decoration-color: #ff7300;
+        }
+    </style>   
+</head>
+<body>
+
+  <header>
+    <h1>Melody Music Band Galleries</h1>
+  </header>
+
+  <main>
+    <!-- Main Container -->
+  <div class="container my-5">
+    <div class="row g-4">
+           <!-- Picture -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="{% static 'assets/band_members.jpg' %}" class="card-img-top product-img" alt="paul" /><br>
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+      <!-- Picture -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="{% static 'assets/paul.jpg' %}" class="card-img-top product-img" alt="teboho" /><br>
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+      <!-- Picture -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="{% static 'assets/lucky.jpg' %}" class="card-img-top product-img" alt="lucky" /><br>
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+      <!-- Picture -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="{% static 'assets/mahlatsi.jpg' %}" class="card-img-top product-img" alt="mahlatsi" /><br>
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+      <!-- Picture -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="{% static 'assets/teboho.jpg' %}" class="card-img-top product-img" alt="teboho" /><br>
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+      <!-- Picture -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="{% static 'assets/mark.jpg' %}" class="card-img-top product-img" alt="mark" /><br>
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Khathatso Paul Masiza. All rights reserved</p>
+  </footer>
+
+</body>
+</html>
