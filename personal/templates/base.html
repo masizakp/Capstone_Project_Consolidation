@@ -1,157 +1,166 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>    
-    <title>Khathatso Paul Masiza - Online CV</title>    
+    <title>Melody Music Band</title>  
+     <style>
+        img {
+            border-radius: 50%;
+        }
+        .image-left {
+            float: left;
+           /* margin-right: 15px;  space between img and text */
+            /*width: 200px;        size as needed */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #be7e0f;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        img.profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+        section {
+            background-color: #b0a41a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(245, 55, 55, 0.1);
+        }
+        h2 {
+            border-bottom: 2px solid #e53c29;
+            padding-bottom: 8px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border-radius: 4px;
+            border: 1px solid #e85252;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 12px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2678cf;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #b0a41a;
+            color: #fff;
+            margin-top: 40px;
+        }
+        /* Optional: Style for links */
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            text-decoration-color: #ff7300;
+        }
+    </style>  
 </head>
 <body>
 
 <header>
     <!-- Main header with name and photo -->
-    <h1>Khathatso Paul Masiza</h1>
+    <h1>🎵 The Story of Melody Music Band 🎤</h1>
     <!-- Profile image -->
-    <img src="{'% images/my_photo.jpg %'}" width="120" alt="Khathatso Paul Masiza"/>
-    <!-- Contact info: location, phone, email -->
-    <p><strong>Randfontein, South Africa | +27 73 404 2203 | <a href="mailto:masizakp@gmail.com">masizakp@gmail.com</a></strong></p>
-    <a href="eShopping.html">eShopping</a>
+    <img src="{% static 'assets/band_members.jpg' %}" style="width:150px" alt="band_members">
+      
 </header>
 
 <section id="bio">
-    <!-- About Me section with a brief personal description -->
-    <h2>About Me</h2>
-    <p>
-        I am a dedicated educator with extensive teaching experience and a commitment to student success. Over the years, I have held roles such as Teacher, Union Shop Steward, District Teacher Moderator, and Acting Departmental Head, which have honed my leadership, communication, and organizational skills.
-    </p>
-    <p>
-        My passion lies in fostering collaborative learning environments and advocating for educators' rights. Currently, I am expanding my expertise by pursuing a degree in software engineering, developing skills in Python, Django, MySQL, HTML, and CSS. I aim to leverage both my educational background and technical skills to create impactful software solutions that address real-world challenges.
-    </p>
-    <p>
-        Motivated by lifelong learning, I aspire to transition into the tech sector, blending my leadership experience with innovative coding skills to make a meaningful difference.
-    </p>
+    <!-- About  section with a brief personal description -->
+
+    <p><strong>Established:</strong> 2007</p>
+    <p><strong>Genre:</strong> South African Afro-pop</p>
+
+    <p>In the heart of Randfontein, under the blazing summer sun of 2007, five ambitious young artists came together with one dream — to change the sound of South African hip-hop forever. That was the beginning of Melody Music Band.</p>
+    <p><img src="{% static 'assets/paul.jpg' %}" style="width:150px" alt="paul" class="image-left">
+    <strong>Paul</strong>, the visionary producer and beatmaker, brought the fire of traditional African drums blended with futuristic synths. He was the glue — calm, strategic, and always one step ahead.</p>
+    <p><img src="{% static 'assets/mark.jpg' %}" style="width:150px" alt="mark" class="image-left">
+    <strong>Mark</strong>, the lyrical storyteller, had a gift for words. Growing up surrounded by the struggle and soul of township life, he turned real experiences into rhymes that hit deep. His verses became the voice of a generation.</p>
+    <p><img src="{% static 'assets/teboho.jpg' %}" style="width:150px" alt="teboho" class="image-left">
+    <strong>Teboho</strong>, the rebel of the group, was known for his sharp tongue and fearless energy. His rapid-fire flow and stage presence made him a crowd favorite — the spark that lit every live show on fire.</p>
+    <p><img src="{% static 'assets/lucky.jpg' %}" style="width:150px" alt="lucky" class="image-left">
+    <strong>Lucky</strong>, the silent genius, was the band’s hook master. His smooth, melodic choruses gave the group its name — Melody Band. His voice could turn a rap battle into a ballad.</p>
+    <p><img src="{% static 'assets/mahlatsi.jpg' %}" style="width:150px" alt="mahlatsi" class="image-left">
+    <strong>Mahlatsi</strong>, the style icon and dancer, added rhythm and movement to their message. Whether choreographing a video shoot or hyping the crowd, Mahlatsi made hip-hop feel like a full-body experience.</p>
+
+    <p>Together, they created a unique fusion of rhythm, rhyme, and raw emotion that reflected the pulse of South Africa’s streets. Their lyrics tackled real issues — poverty, pride, resilience, and dreams — while their beats borrowed from Kwaito, Afrobeat, and classic boom bap.</p>
+
+    <p>From open-mic nights to packed festivals, Melody Music Band rose from local legends to national icons. Their 2010 breakout album, <em>"Echoes of the Street"</em>, earned them awards and airplay, but they remained grounded, always returning to their roots to mentor young talent.</p>
+
+    <p>Today, Melody Band stands not just as a music group, but as a movement — a symbol of how rhythm, unity, and a shared vision can rewrite history through sound.</p>
+
+</body>
 </section>
 
 <section id="contact-details">
     <!-- Contact details including social media link -->
     <h2>Contact Details</h2>
     <p>
-        <strong>Name:</strong> Khathatso Paul Masiza<br>
+        <strong>Name:</strong>  Melody Music Band Manager <br>
         <strong>Phone:</strong> +27 73 404 2203<br>
-        <strong>Email:</strong> <a href="mailto:masizakp@gmail.com">masizakp@gmail.com</a><br>
-        <strong>Location:</strong> Randfontein, South Africa 1759<br>
-        <strong>Social Media:</strong> <a href="https://linkedin.com/in/khathatso-paul-masiza-507227137" target="_blank">LinkedIn</a>
-         
+        <strong>Email:</strong> <a href="mailto:masizakp@gmail.com">paul@gmail.com</a><br>
+        <strong>Location:</strong> Randfontein, South Africa 1759<br>         
     </p>
-    <!-- Optional: include a photo here as well -->
-    <p>
-        <img src="{%'images/my_photo.jpg' %}" width="120"  alt="Khathatso Paul Masiza">
-    </p>
-</section>
-
-<section id="skills">
-    <!-- List of skills and competencies -->
-    <h2>Skills & Competencies</h2>
-    <ul>
-        <li>Microsoft Office Suite (Word, Excel, Access, PowerPoint, Project)</li>
-        <li>Programming: Java, C#, Python</li>
-        <li>Advocacy & Representation, Conflict Resolution</li>
-        <li>Labor Relations & Organizational Skills</li>
-        <li>Leadership & Team Management</li>
-        <li>Data Analysis & Strategic Planning</li>
-        <li>Project Management & Agile Methodologies</li>
-        <li>Financial Acumen & Communication</li>
-        <li>Assessment & Evaluation</li>
-        <li>Azure Fundamentals</li>
-    </ul>
-</section>
-
-<section id="education">
-    <!-- Educational background listing degrees and certifications -->
-    <h2>Education</h2>
-    <ul>
-        <li><strong>National Diploma: Information Technology</strong> - Central University of Technology, Free State (2011)</li>
-        <li><strong>Postgraduate Certificate in Education</strong> - Central University of Technology, Free State (2012)</li>
-        <li><strong>Bachelor of Education (Hons): Education Management</strong> - UNISA (2022)</li>
-        <li><strong>Postgraduate Diploma: Management</strong> - North West University (2024)</li>
-        <li><strong>Software Engineering Bootcamp</strong> - HyperionDev (2025 - Current)</li>
-    </ul>
-</section>
-
-<section id="work-experience">
-    <!-- Detailed work experience, current and past roles -->
-    <h2>Work Experience</h2>
-    <h3>Current Roles</h3>
-    <ul>
-        <li>
-            <strong>Website Manager and Editor</strong> - Phahama Maths, Science and ICT SOS (Feb 2024 - Present)
-            <ul>
-                <li>Manage and update school website content and design</li>
-                <li>Improve user experience and accessibility</li>
-                <li>Collaborate with staff for content accuracy</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Union Shop Steward</strong> - Phahama Maths, Science and ICT SOS (Jan 2023 - Present)
-            <ul>
-                <li>Advocate for staff rights, address grievances</li>
-                <li>Negotiate working conditions</li>
-                <li>Foster workplace solidarity</li>
-            </ul>
-        </li>
-        <li>
-            <strong>District Teacher Moderator</strong> - Gauteng West Dept of Education (Jan 2023 - Present)
-            <ul>
-                <li>Standardize assessments, analyze student data</li>
-                <li>Organize professional development for teachers</li>
-                <li>Mentor educators</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Educator</strong> - Phahama Maths, Science and ICT (Sep 2021 - Present)
-            <ul>
-                <li>Teach Mathematics Literacy & Digital Technology</li>
-                <li>Develop critical thinking & practical skills</li>
-            </ul>
-        </li>
-    </ul>
-    <h3>Past Roles</h3>
-    <ul>
-        <li>
-            <strong>Acting Departmental Head</strong> - Phahama (Mar 2024 - Jul 2024)
-            <ul>
-                <li>Led curriculum development, staff mentorship</li>
-                <li>Engaged with community & parents</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Educator</strong> - Magaliesburg Agriculture (Feb 2017 - Sep 2021)
-            <ul>
-                <li>Teaching Math & Science in rural settings</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Teacher & Lab Technician</strong> - Meetsetshehla Secondary School (Apr 2012 - Jan 2017)
-            <ul>
-                <li>Teach Computer Application Technology & Math</li>
-                <li>Provide technical support in computer labs</li>
-            </ul>
-        </li>
-    </ul>
+    
 </section>
 
 <section id="forms">
     <!-- Forms for user interaction: search and contact -->
-    <h2>Interact with Me</h2>
+    <h2>Interact with Melody Music Band</h2>
     <!-- Search Form (GET method) -->
-    <h3>Search My CV</h3>
+    <h3>Latest album</h3>
     <form method="GET" action="/search">
         <label for="search">Enter keywords or topics:</label>
         <!-- User inputs search keywords here -->
-        <input type="text" id="search" name="query" placeholder="e.g., leadership, programming" />
+        <input type="text" id="search" name="query" placeholder="e.g., great hits, 2020 tour" />
         <button type="submit">Search</button>
     </form>
 
     <!-- Contact Form (POST method) -->
-    <h3>Send a Message</h3>
+    <h3>Send a Message for Bookings</h3>
     <form method="POST" action="/contact">
         <!-- User provides name -->
         <label for="name">Your Name:</label>
@@ -168,7 +177,7 @@
 
 <!-- Footer with copyright info -->
 <footer>
-    <p>&copy; 2024 Khathatso Paul Masiza. All rights reserved.</p>
+    <p>&copy; 2025 Khathatso Paul Masiza. All rights reserved.</p>
 </footer>
 
     </body>

@@ -5,16 +5,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siza's eShopping</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     
+    <title>Online Music Shop</title>  
+     <style>
+        img {
+            border-radius: 50%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #be7e0f;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #b0a41a;
+            color: black;
+            margin-top: 40px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        img.profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+        section {
+            background-color: #b0a41a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(245, 55, 55, 0.1);
+        }
+        h2 {
+            border-bottom: 2px solid #e53c29;
+            padding-bottom: 8px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border-radius: 4px;
+            border: 1px solid #e85252;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 12px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2678cf;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #b0a41a;
+            color: black;
+            margin-top: 40px;
+        }
+        /* Optional: Style for links */
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            text-decoration-color: #ff7300;
+        }
+    </style>  
 </head>
 
 <body>
 <header class="mb-4">
-    
-  <img src="{'% images/name_logo.JPG%'}" alt="Company Logo" class="w-100" style="height: 100%; object-fit: cover;">
+    <div class="container">
+      <p><h1>Online Music Shop</h1></p>
+    </div> 
   
 </header>
   <!-- Main Container -->
@@ -23,137 +115,115 @@
            <!-- Product 1 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/Acer_laptop.webp' %}" class="card-img-top product-img" alt="Product 1" />
+          <img src="{% static 'assets/cd.jpg' %}" class="card-img-top product-img" alt="Product 1" />
           <div class="card-body text-center">
-            <h5 class="card-title">Acer Aspire Lite i3 N300 8GB 512GB WIN11 Home Silver</h5>
-            <p class="card-text">R5 975.89</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">2007 Mlilo album with 10 hit songs</h5>
+            <p class="card-text">R180</p>            
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 2 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/Sumsung Galaxy.webp' %}" class="card-img-top product-img" alt="Product 2" />
+          <img src="{% static 'assets/dvd.jpg' %}" class="card-img-top product-img" alt="Product 2" />
           <div class="card-body text-center">
-            <h5 class="card-title">Samsung Galaxy S24 Ultra Black 256GB 5G <br><br></h5>
-            <p class="card-text">R19 798.90</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">2007 Mlilo DVD album   <br><br></h5>
+            <p class="card-text">R300</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 3 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/headsets.webp' %}" class="card-img-top product-img" alt="Product 3" />
+          <img src="{% static 'assets/cd.jpg' %}" class="card-img-top product-img" alt="Product 3" />
           <div class="card-body text-center">
-            <h5 class="card-title">JBL Live 770NC Noise Cancelling Wireless Over-Ear Headphones</h5>
-            <p class="card-text">R1 578.89</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">Tsa-Lapeng ft Dj Black Coffee</h5>
+            <p class="card-text">R320</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 4 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/washing_machine.webp' %}" class="card-img-top product-img" alt="Product 4" />
+          <img src="{% static 'assets/dvd.jpg' %}" class="card-img-top product-img" alt="Product 4" />
           <div class="card-body text-center">
-            <h5 class="card-title">LG 10.5 kg Front Loader Washing Machine F4V5RYP2T - Grey</h5>
-            <p class="card-text">R9 998.69</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">Tsa-Lapeng hit live show DVD</h5>
+            <p class="card-text">R400</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 5 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/kitle.webp' %}" class="card-img-top product-img" alt="Product 5" />
+          <img src="{% static 'assets/cd.jpg' %}" class="card-img-top product-img" alt="Product 5" />
           <div class="card-body text-center">
-            <h5 class="card-title">Smeg KLF03BLSA 3D Logo Kettle, Black, 1.7 Litre</h5>
-            <p class="card-text">R2 400.79</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">Makoti- album of the year 2010</h5>
+            <p class="card-text">R350</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 6 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/playstation.webp' %}" class="card-img-top product-img" alt="Product 6" />
+          <img src="{% static 'assets/dvd.jpg' %}" class="card-img-top product-img" alt="Product 6" />
           <div class="card-body text-center">
-            <h5 class="card-title">Sony PlayStation 5 SLIM DIGITAL CONSOLE<br><br></b></h5>
-            <p class="card-text">R11 500.00</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">Soldier - Collection ft Amanda Black </h5>
+            <p class="card-text">R460</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 7 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/coffe_machine.webp' %}" class="card-img-top product-img" alt="Product 6" />
+          <img src="{% static 'assets/cd.jpg' %}" class="card-img-top product-img" alt="Product 6" />
           <div class="card-body text-center">
-            <h5 class="card-title">Gaggia Cadorna Bean To Cup Automatic Coffee Machine</h5>
-            <p class="card-text">R13 500.89</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">Matjhabeng - 16 hits full album</h5>
+            <p class="card-text">R390</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
       <!-- Product 8 -->
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="card">
-          <img src="{% 'images/HissenseTV.webp' %}" class="card-img-top product-img" alt="Product 6" />
+          <img src="{% static 'assets/dvd.jpg' %}" class="card-img-top product-img" alt="Product 6" />
           <div class="card-body text-center">
-            <h5 class="card-title">Hisense 58-inch Smart 4K UHD TV-58A6N<br><br></h5>
-            <p class="card-text">R6 999.80</p>
-            <button class="btn btn-primary">Buy</button>
+            <h5 class="card-title">Hlasela - Platinum hit songs</h5>
+            <p class="card-text">R900</p>
+            <a href="{% url 'order' %}" class="btn btn-success">
+                Place Order
+            </a>
           </div>
         </div>
       </div>
-      <!-- Product 9 -->
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="card">
-          <img src="{% 'images/oven.webp' %}" class="card-img-top product-img" alt="Product 6" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Beko 60cm Aeroperfect Built-In Oven Inox <br><br></h5>
-            <p class="card-text">R4 999.70</p>
-            <button class="btn btn-primary">Buy</button>
-          </div>
-        </div>
-      </div>
-      <!-- Product 10 -->
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="card">
-          <img src="{% 'images/Aiwa System.webp' %}" class="card-img-top product-img" alt="Product 6" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Aiwa ACSD-5200 5.2 Channel HiFi Component System</h5>
-            <p class="card-text">R3 999.39</p>
-            <button class="btn btn-primary">Buy</button>
-          </div>
-        </div>
-      </div>
-     
+
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <form class="row g-3 align-items-center justify-content-center">
-        <div class="col-auto">
-          <img src="{% 'images/logo.JPG' %}" class="logo" alt="Company Logo" />
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control" placeholder="Name" />
-        </div>
-        <div class="col-auto">
-          <input type="email" class="form-control" placeholder="Email" />
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control" placeholder="Phone" />
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-outline-primary">Contact Us</button>
-        </div>
-      </form>
+      <p>&copy; 2025 Khathatso Paul Masiza. All rights reserved.</p>
     </div>
   </footer>  
 </html>
