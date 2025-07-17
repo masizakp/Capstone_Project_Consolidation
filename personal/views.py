@@ -1,39 +1,57 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse # Import HttpResponse
+from django.http import HttpResponse  # Import HttpResponse
 from .forms import ContactForm
 
 
-# View function for the home screen
 def home_screen_view(request):
-    # Logs the request headers to the console 
-    # (for debugging purposes)
+    """
+    Handles the home screen view.
+
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Rendered 'base.html' template without context
+    :rtype: HttpResponse
+    """
     print(request.headers)
-    # Renders the 'base.html' template without
-    # any context data
     return render(request, "base.html", {})
 
 
 def eshopping_view(request):
-    # Logs the request headers to the console 
-    # (for debugging purposes)
+    """
+    Handles the eShopping page view.
+
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Rendered 'eshopping.html' template without context
+    :rtype: HttpResponse
+    """
     print(request.headers)
-    # Renders the 'eShopping.html' template without 
-    # any context data
     return render(request, "eshopping.html", {})
 
 
 def meetsetshehla_view(request):
-    # Logs the request headers to the console 
-    # (for debugging purposes)
+    """
+    Handles the extrapage view.
+
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Rendered 'extrapage.html' template without context
+    :rtype: HttpResponse
+    """
     print(request.headers)
-    # Renders the 'extrapage.html' template without 
-    # any context data
     return render(request, "extrapage.html", {})
 
 
 def order_view(request):
+    """
+    Handles order form submission and rendering.
+
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Redirect to 'success' page if POST and form valid; else renders 'order.html' with form
+    :rtype: HttpResponse
+    """
     if request.method == 'POST':
-        # Make sure to pass request.FILES for file uploads!
         form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -42,16 +60,27 @@ def order_view(request):
         form = ContactForm()
     return render(request, 'order.html', {'form': form})
 
+
 def success_view(request):
+    """
+    Displays success page after order submission.
+
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Rendered 'success.html' template without context
+    :rtype: HttpResponse
+    """
     return render(request, 'success.html', {})
-    # Alternatively, for a simple text response without a template:
-    # return HttpResponse("Your order has been placed successfully!")
 
 
 def polls_views(request):
-    # Logs the request headers to the console
-    # (for debugging purposes)
+    """
+    Handles the polls page view.
+
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Rendered 'polls.html' template without context
+    :rtype: HttpResponse
+    """
     print(request.headers)
-    # Renders the 'polls.html' template without
-    # any context data
     return render(request, "polls.html", {})
