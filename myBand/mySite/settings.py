@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 from pathlib import Path
 import os
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +26,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-u*5gsyy-*ms36=z6sdyc5sbp0xn1j93*7569i&lzsxox-k_m_a"
+
+# Access environment variables
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / '.env')
+
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env.bool("DEBUG", default=True)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

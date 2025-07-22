@@ -17,7 +17,7 @@ from personal import views
 # Define URL patterns to map paths to views
 urlpatterns = [
     # Route for the Django admin interface
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
 
     # Route for the home page and eshopping page
     path("", views.home_screen_view, name="home"),
