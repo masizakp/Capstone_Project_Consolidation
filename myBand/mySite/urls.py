@@ -10,17 +10,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-# List of URL patterns to route incoming HTTP requests
 urlpatterns = [
-    # Admin site URL
+    # Admin interface
     path("admin/", admin.site.urls),
 
-    # Home page view (root URL)
-    path("", include('personal.urls')),
+    # Application routes
+    path("", include("personal.urls")),
+    path("blog/", include("blog.urls")),
+    path("polls/", include("polls.urls")),
+    path("user_auth/", include("user_auth.urls")),
+]
 
-    path('blog/', include('blog.urls')),
-
-    path('polls/', include('polls.urls')),
-
-    path('user_auth/', include('user_auth.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
