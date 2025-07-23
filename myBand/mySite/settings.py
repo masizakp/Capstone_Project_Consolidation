@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "personal",
     "blog",
     "polls",
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

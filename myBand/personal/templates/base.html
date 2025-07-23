@@ -3,61 +3,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Melody Music Band</title>  
-     <style>
-        img {
-            border-radius: 50%;
-        }
-        .image-left {
-            float: left;
-           /* margin-right: 15px;  space between img and text */
-            /*width: 200px;        size as needed */
-        }
+    <style>
+        /* Reset and basics */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #be7e0f;
             line-height: 1.6;
+            color: #333;
         }
+
         header {
             text-align: center;
             margin-bottom: 30px;
         }
+
         h1 {
             margin: 0;
             font-size: 2.5em;
+            color: #fff;
+            text-shadow: 1px 1px 2px #6d4c00;
         }
-        img.profile-img {
+
+        nav {
+            background-color: #b0a41a;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav a:hover,
+        nav a:focus {
+            color: #ff7300;
+            text-decoration: underline;
+            outline: none;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .image-left {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
             width: 150px;
             height: 150px;
-            border-radius: 50%;
             object-fit: cover;
-            margin-top: 15px;
+            border-radius: 50%;
         }
+
         section {
             background-color: #b0a41a;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(245, 55, 55, 0.1);
+            color: #222;
+            clear: both;
         }
+
         h2 {
             border-bottom: 2px solid #e53c29;
             padding-bottom: 8px;
+            color: #fff;
         }
+
         ul {
             list-style-type: square;
             padding-left: 20px;
+            color: #fff;
         }
+
         form {
             margin-top: 20px;
         }
+
         label {
             display: block;
             margin-top: 10px;
             font-weight: bold;
+            color: #fff;
         }
+
         input[type="text"],
         input[type="email"],
         textarea {
@@ -68,6 +109,7 @@
             border: 1px solid #e85252;
             box-sizing: border-box;
         }
+
         button {
             margin-top: 12px;
             padding: 10px 15px;
@@ -76,25 +118,24 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        button:hover {
+
+        button:hover,
+        button:focus {
             background-color: #2678cf;
+            outline: none;
         }
+
         footer {
             text-align: center;
             padding: 15px;
             background-color: #b0a41a;
             color: #fff;
             margin-top: 40px;
-        }
-        /* Optional: Style for links */
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-            text-decoration-color: #ff7300;
+            border-radius: 8px;
+            font-size: 0.9em;
         }
     </style>  
 </head>
@@ -104,9 +145,16 @@
     <!-- Main header with name and photo -->
     <h1>🎵 The Story of Melody Music Band 🎤</h1>
     <!-- Profile image -->
-    <img src="{% static 'assets/band_members.jpg' %}" style="width:150px" alt="band_members">
-      
+    <img src="{% static 'assets/band_members.jpg' %}" alt="band members" style="width:150px; height:150px; object-fit:cover;">
 </header>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'user_auth:show_user' %}">Profile</a>
+    <a href="{% url 'user_auth:login' %}">Login</a>
+    <a href="{% url 'user_auth:register' %}">Register</a>
+    <a href="{% url 'user_auth:logout_user' %}">Logout</a>
+</nav>
 
 <section id="bio">
     <!-- About  section with a brief personal description -->
@@ -115,70 +163,78 @@
     <p><strong>Genre:</strong> South African Afro-pop</p>
 
     <p>In the heart of Randfontein, under the blazing summer sun of 2007, five ambitious young artists came together with one dream — to change the sound of South African hip-hop forever. That was the beginning of Melody Music Band.</p>
-    <p><img src="{% static 'assets/paul.jpg' %}" style="width:150px" alt="paul" class="image-left">
-    <strong>Paul</strong>, the visionary producer and beatmaker, brought the fire of traditional African drums blended with futuristic synths. He was the glue — calm, strategic, and always one step ahead.</p>
-    <p><img src="{% static 'assets/mark.jpg' %}" style="width:150px" alt="mark" class="image-left">
-    <strong>Mark</strong>, the lyrical storyteller, had a gift for words. Growing up surrounded by the struggle and soul of township life, he turned real experiences into rhymes that hit deep. His verses became the voice of a generation.</p>
-    <p><img src="{% static 'assets/teboho.jpg' %}" style="width:150px" alt="teboho" class="image-left">
-    <strong>Teboho</strong>, the rebel of the group, was known for his sharp tongue and fearless energy. His rapid-fire flow and stage presence made him a crowd favorite — the spark that lit every live show on fire.</p>
-    <p><img src="{% static 'assets/lucky.jpg' %}" style="width:150px" alt="lucky" class="image-left">
-    <strong>Lucky</strong>, the silent genius, was the band’s hook master. His smooth, melodic choruses gave the group its name — Melody Band. His voice could turn a rap battle into a ballad.</p>
-    <p><img src="{% static 'assets/mahlatsi.jpg' %}" style="width:150px" alt="mahlatsi" class="image-left">
-    <strong>Mahlatsi</strong>, the style icon and dancer, added rhythm and movement to their message. Whether choreographing a video shoot or hyping the crowd, Mahlatsi made hip-hop feel like a full-body experience.</p>
+
+    <p>
+        <img src="{% static 'assets/paul.jpg' %}" alt="Paul" class="image-left" />
+        <strong>Paul</strong>, the visionary producer and beatmaker, brought the fire of traditional African drums blended with futuristic synths. He was the glue — calm, strategic, and always one step ahead.
+    </p>
+
+    <p>
+        <img src="{% static 'assets/mark.jpg' %}" alt="Mark" class="image-left" />
+        <strong>Mark</strong>, the lyrical storyteller, had a gift for words. Growing up surrounded by the struggle and soul of township life, he turned real experiences into rhymes that hit deep. His verses became the voice of a generation.
+    </p>
+
+    <p>
+        <img src="{% static 'assets/teboho.jpg' %}" alt="Teboho" class="image-left" />
+        <strong>Teboho</strong>, the rebel of the group, was known for his sharp tongue and fearless energy. His rapid-fire flow and stage presence made him a crowd favorite — the spark that lit every live show on fire.
+    </p>
+
+    <p>
+        <img src="{% static 'assets/lucky.jpg' %}" alt="Lucky" class="image-left" />
+        <strong>Lucky</strong>, the silent genius, was the band’s hook master. His smooth, melodic choruses gave the group its name — Melody Band. His voice could turn a rap battle into a ballad.
+    </p>
+
+    <p>
+        <img src="{% static 'assets/mahlatsi.jpg' %}" alt="Mahlatsi" class="image-left" />
+        <strong>Mahlatsi</strong>, the style icon and dancer, added rhythm and movement to their message. Whether choreographing a video shoot or hyping the crowd, Mahlatsi made hip-hop feel like a full-body experience.
+    </p>
 
     <p>Together, they created a unique fusion of rhythm, rhyme, and raw emotion that reflected the pulse of South Africa’s streets. Their lyrics tackled real issues — poverty, pride, resilience, and dreams — while their beats borrowed from Kwaito, Afrobeat, and classic boom bap.</p>
 
     <p>From open-mic nights to packed festivals, Melody Music Band rose from local legends to national icons. Their 2010 breakout album, <em>"Echoes of the Street"</em>, earned them awards and airplay, but they remained grounded, always returning to their roots to mentor young talent.</p>
 
     <p>Today, Melody Band stands not just as a music group, but as a movement — a symbol of how rhythm, unity, and a shared vision can rewrite history through sound.</p>
-
-</body>
 </section>
 
 <section id="contact-details">
-    <!-- Contact details including social media link -->
     <h2>Contact Details</h2>
     <p>
-        <strong>Name:</strong>  Melody Music Band Manager <br>
-        <strong>Phone:</strong> +27 73 404 2203<br>
-        <strong>Email:</strong> <a href="mailto:masizakp@gmail.com">paul@gmail.com</a><br>
-        <strong>Location:</strong> Randfontein, South Africa 1759<br>         
+        <strong>Name:</strong> Melody Music Band Manager<br />
+        <strong>Phone:</strong> +27 73 404 2203<br />
+        <strong>Email:</strong> <a href="mailto:masizakp@gmail.com">paul@gmail.com</a><br />
+        <strong>Location:</strong> Randfontein, South Africa 1759<br />
     </p>
-    
 </section>
 
 <section id="forms">
-    <!-- Forms for user interaction: search and contact -->
     <h2>Interact with Melody Music Band</h2>
-    <!-- Search Form (GET method) -->
+
     <h3>Latest album</h3>
     <form method="GET" action="/search">
         <label for="search">Enter keywords or topics:</label>
-        <!-- User inputs search keywords here -->
         <input type="text" id="search" name="query" placeholder="e.g., great hits, 2020 tour" />
         <button type="submit">Search</button>
     </form>
 
-    <!-- Contact Form (POST method) -->
     <h3>Send a Message for Bookings</h3>
     <form method="POST" action="/contact">
-        <!-- User provides name -->
+        {% csrf_token %}
         <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required /><br>
-        <!-- User provides email -->
+        <input type="text" id="name" name="name" required />
+
         <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required /><br>
-        <!-- User writes message -->
-        <label for="message">Your Message:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
         <button type="submit">Send Message</button>
     </form>
 </section>
 
-<!-- Footer with copyright info -->
 <footer>
     <p>&copy; 2025 Khathatso Paul Masiza. All rights reserved.</p>
 </footer>
 
-    </body>
+</body>
 </html>

@@ -27,4 +27,5 @@ urlpatterns = [
     
     # Registration page to create a new user account
     path('register/', views.register, name='register'),
+    path('logout/', views.logout_user, name='logout_user'),
 ]

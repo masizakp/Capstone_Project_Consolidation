@@ -11,6 +11,7 @@
     <div class="alert alert-success text-center shadow-sm">
         <h1>Welcome, {{ username }}!</h1>
         <p class="lead">You have successfully logged in.</p>
+        <a href="{% url 'user_auth:logout_user' %}">Logout</a>
     </div>
 </div>
 

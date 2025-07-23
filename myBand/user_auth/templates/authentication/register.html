@@ -1,10 +1,16 @@
+{% load static %}
+{% load widget_tweaks %}  {# Load this if you want to use add_class #}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register - Melody Music Band</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Optional: Favicon -->
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
 </head>
 <body class="bg-light">
 
@@ -16,40 +22,58 @@
             <!-- Registration card -->
             <div class="card shadow-lg">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Register</h4>
+                    <h4 class="mb-0">Create Your Account</h4>
                 </div>
 
                 <!-- Form body -->
                 <div class="card-body">
-                    <form method="post">
+
+                    <!-- Display non-field errors (form-wide) -->
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <form method="post" novalidate>
                         {% csrf_token %}
                         {% for field in form %}
                             <div class="mb-3">
-                                <!-- Field label -->
-                                <label class="form-label">{{ field.label_tag }}</label>
-                                <!-- Input field -->
-                                {{ field }}
+                                <!-- Correct usage of label_tag without arguments -->
+                                {{ field.label_tag }}
+
+                                <!-- Bootstrap class for form controls (requires django-widget-tweaks) -->
+                                {{ field|add_class:"form-control" }}
+
                                 <!-- Field-specific errors -->
                                 {% if field.errors %}
-                                    <div class="text-danger">{{ field.errors }}</div>
+                                    <div class="text-danger mt-1">
+                                        {{ field.errors|striptags }}
+                                    </div>
                                 {% endif %}
                             </div>
                         {% endfor %}
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        <button type="submit" class="btn btn-primary w-100" aria-label="Register">Sign Up</button>
                     </form>
                 </div>
 
                 <!-- Footer with login link -->
                 <div class="card-footer text-center">
-                    <small>Already have an account? <a href="{% url 'user_auth:login' %}">Login here</a></small>
+                    <small>
+                        Already have an account? 
+                        <a href="{% url 'user_auth:login' %}" role="link" aria-label="Go to login page">Login here</a>
+                    </small>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
+<!-- Bootstrap 5 JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django import forms
 
@@ -92,3 +92,7 @@ def user_login(request):
     Render the login form page (GET request).
     """
     return render(request, 'authentication/login.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('user_auth:login')
