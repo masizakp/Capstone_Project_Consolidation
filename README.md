@@ -59,7 +59,7 @@ Visit http://127.0.0.1:8000 to see your app.
 1. Clone the repository
 
 git clone https://github.com/masizakp/Capstone_Project_Consolidation.git
-cd Capstone_Project_Consolidation/myBand
+cd Capstone_Project_Consolidation
 
 2. Build the Docker image
 
