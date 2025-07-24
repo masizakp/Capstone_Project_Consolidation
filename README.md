@@ -1,3 +1,5 @@
+<!-- Updated to show in GitHub root -->
+
 # My Django Project
 
 This repository contains a Django web application.
