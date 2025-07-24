@@ -14,6 +14,7 @@ These instructions will help you set up and run the project locally using a Pyth
 
 - Python 3.8+
 - pip (Python package installer)
+- django-widget-tweaks (installed via requirements.txt)
 - Docker (optional, for containerized deployment)
 
 ---
